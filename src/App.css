@@ -1,10 +1,11 @@
 .image{
-  background: url(./img/hassan.jpg);
-  height: 800px;
+  min-height: 100vh;
+  background-image: url("./img//hassan.jpg");
 
 }
 .card{
 display: flex;
 justify-content: center;
 padding: 150px;
+padding-top: 350px;
 }
