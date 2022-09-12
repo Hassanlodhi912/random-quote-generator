@@ -4,19 +4,20 @@ import axios from "axios"
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setQuotes } from './store/action/Index';
+import { Button } from '@mui/material';
 
 
 const App = () => { 
   const dispatch =useDispatch()
-  const quotes = useSelector((state) => state.quoteReducer);
+  let list = useSelector((state) => state);
   const fetchQuotes = async ()=>{
-    const response = await axios.get("https://motivational-quote-api.herokuapp.com/quotes").catch((err)=>{console.log("Error",err)})
+    let response = await axios.get("https://motivational-quote-api.herokuapp.com/quotes/random").catch((err)=>{console.log("Error",err)})
     dispatch(setQuotes(response.data))
   };
   useEffect(()=>{
     fetchQuotes()}
     ,[])
-    console.log("Quotes:",quotes)
+   console.log("quotes",list)
   
   return (
     <div className="image"><div/>
@@ -24,6 +25,9 @@ const App = () => {
     <div className="card">
     
     <Card/>
+    <Button  onClick={fetchQuotes} sx={{backgroundColor:"white"}}>NEXT QUOTES</Button>
+
+    
     </div>
     </div> 
   )

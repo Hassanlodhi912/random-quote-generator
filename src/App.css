@@ -4,8 +4,13 @@
 
 }
 .card{
+  align-items: center;
 display: flex;
+flex-direction: column;
 justify-content: center;
 padding: 150px;
 padding-top: 350px;
+}
+.card>button{
+  
 }

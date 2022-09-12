@@ -1,7 +1,10 @@
 import { ActionTypes } from "../constant/Action-Types";
 const initialState = {
     list:[
+       {
         
+       }
+       
     ]
 
 }
